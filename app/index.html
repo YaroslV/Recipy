@@ -13,11 +13,19 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="app.js"></script>  
+  <script src="components/recipes/recipes.js"></script>  
+  <script src="services/recipeService.js"></script>
+  <script src="addRecipe/addRecipe.js"></script>
+  <script src="components/hello/hello.js"></script>
 </head>
 <body>
   <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
+    <li><a ui-sref="recipes">All recipes</a></li>
+    <li><a ui-sref="addRecipe">Add new recipe</a></li>
+    <li><a ui-sref="hello">Hello</a></li>
   </ul>
 
   <!--[if lt IE 7]>
@@ -28,15 +36,8 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-ui-router/angular-ui-router.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
   
-  <div ui-view></div>
+  
+  <ui-view></ui-view>
 </body>
 </html>
