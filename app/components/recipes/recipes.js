@@ -1,10 +1,10 @@
 angular.module('myApp')
-    .component('recipes',{
+    .component('recipes', {
         template: `<div>
     <ul>
         <li ng-repeat="recipe in $ctrl.recipes">
             <div>
-                <a href={{recipe.id}}>{{recipe.title}}</a>
+                <a ui-sref="recipe({ recipeId: recipe.id})">{{recipe.title}}</a>
                 <p>{{recipe.text}}</p>
             </div>
         </li>

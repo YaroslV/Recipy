@@ -26,7 +26,19 @@ angular.module('myApp', ['ui.router'])
       component: "hello"
     }
 
+    var view4 = {
+      name: "recipe",
+      url: "/recipe/{recipeId}",
+      component: "recipe",
+      resolve: {
+        recipe: function(recipeService, $transition$){
+          return recipeService.getRecipe($transition$.params().recipeId);
+        }
+      }
+    }
+
     $stateProvider.state(view1);
     $stateProvider.state(view2);
     $stateProvider.state(view3);
+    $stateProvider.state(view4);
   }]);
